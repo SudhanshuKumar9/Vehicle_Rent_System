@@ -1,0 +1,55 @@
+﻿@model Client.Models.Booking
+
+@{
+    ViewData["Title"] = "BookVehicle";
+}
+
+<h1>Book Vehicle</h1>
+
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-controller="User" asp-action="SaveBooking">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            @*<div class="form-group">
+                <label asp-for="BookingID" class="control-label"></label>
+                <input asp-for="BookingID" class="form-control" />
+                <span asp-validation-for="BookingID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Username" class="control-label"></label>
+                <input asp-for="Username" class="form-control" />
+                <span asp-validation-for="Username" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="VehicleID" class="control-label"></label>
+                <input asp-for="VehicleID" class="form-control" />
+                <span asp-validation-for="VehicleID" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <label asp-for="Date_of_Booking" class="control-label"></label>
+                <input asp-for="Date_of_Booking" class="form-control" />
+                <span asp-validation-for="Date_of_Booking" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Total_Km" class="control-label"></label>
+                <input asp-for="Total_Km" class="form-control" />
+                <span asp-validation-for="Total_Km" class="text-danger"></span>
+            </div>
+            @*<div class="form-group">
+                <label asp-for="Total_Fare" class="control-label"></label>
+                <input asp-for="Total_Fare" class="form-control" />
+                <span asp-validation-for="Total_Fare" class="text-danger"></span>
+            </div>*@
+            <div class="form-group">
+                <input type="submit" value="Book" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+

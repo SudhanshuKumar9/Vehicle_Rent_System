@@ -1,0 +1,56 @@
+﻿@model IEnumerable<Client.Models.Vehicle>
+
+@{
+    ViewData["Title"] = "Vehicle Details";
+}
+
+<h1>Vehicle Details</h1>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.VehicleID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Vehicle_Type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.No_of_Seats)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost_Per_Km)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Number_InStock)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.VehicleID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Vehicle_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.No_of_Seats)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost_Per_Km)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Number_InStock)
+            </td>
+            <td>
+                @Html.ActionLink("Book Now", "BookVehicle", new {  id=item.VehicleID }, new { @class="btn btn-primary"})
+               
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
